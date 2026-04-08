@@ -19,6 +19,12 @@ dependencies = [
   "Pillow",
 ]
 
+[project.optional-dependencies]
+app = [
+  "dash",
+  "plotly",
+]
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["pisco_dataset_clustering_tool*"]
