@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pisco-dataset-clustering-tool"
+version = "0.1.0"
+description = "Reusable PISCO dataset creation and clustering tool for Dash apps"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "h5py",
+  "umap-learn",
+  "scikit-learn",
+  "torch",
+  "torchvision",
+  "Pillow",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pisco_dataset_clustering_tool*"]
