@@ -38,6 +38,30 @@ The product is a reproducible run directory with:
 7. Write cluster outputs
 8. Export EcoTaxa bundles
 
+## Architecture diagram
+
+```mermaid
+flowchart LR
+    A[Upstream profile processing<br/>segmentation / metadata / crops] --> B[Input root]
+    B --> C[run_pipeline]
+
+    C --> D[Metadata collection]
+    D --> E[Sampling]
+    E --> F[SSL train/load]
+    F --> G[Feature extraction]
+    G --> H[UMAP + clustering]
+    H --> I[Output run directory]
+
+    I --> I1[sample_index.csv]
+    I --> I2[features_nonliving.h5]
+    I --> I3[umap_2d.csv]
+    I --> I4[cluster_assignments.csv]
+    I --> I5[EcoTaxa ZIP exports]
+
+    J[Dash app<br/>apps/pipeline_app.py] --> C
+    J --> I
+```
+
 ## Install
 
 Core package only:
